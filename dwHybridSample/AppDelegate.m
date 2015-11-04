@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SlideNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    [SlideNavigationController sharedInstance].leftMenu = [mainStoryBoard instantiateViewControllerWithIdentifier:@"LeftMenuViewController"];
+    
     return YES;
 }
 
